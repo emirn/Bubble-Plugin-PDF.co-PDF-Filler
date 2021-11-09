@@ -1,0 +1,94 @@
+{
+    "auth": "none",
+    "calls": {
+        "AAC": {
+            "body": "{\n\t\"url\" : \"<url>\",\n    \"name\" : \"<name>\",\n\t\"annotationsString\" : \"<annotationsString>\",\n\t\"imagesString\" : \"<imagesString>\",\n    \"fieldsString\" : \"<fieldsString>\",\n    \"profiles\" : \"<profiles>\",\n    \"password\" : \"<password>\"\n}",
+            "body_params": {
+                "AAN": {
+                    "allow_blank": true,
+                    "doc": "URL to the source PDF file or PDF form. Leave empty to create new PDF file.",
+                    "key": "url",
+                    "private": true,
+                    "value": ""
+                },
+                "ABA": {
+                    "allow_blank": true,
+                    "doc": "Add one or more text objects on top of pdf. Each text object to be added can be described as x;y;pages;text;fontsize;fontname;fontcolor;link;transparent. Sample: 20;20;0-;Testing Text;24;Arial;FF0000;www.pdf.co;false. To separate multiple objects, use | separator. where 24 is the font size. You can also add styles intoto the font size using the following modifiers:\n+bold for bold style\n+italic for italic style\n+underline for underline style\n+strikeout for strikeout style\nSee font list for all PDF.co supported fonts. For example, for font size 24 and bold, italic, underline and strikeout styles:\n\n    250;20;0-;PDF form filled with PDF.co API;24+bold+italic+underline+strikeout;Arial;FF0000;www.pdf.co;true",
+                    "key": "annotationsString",
+                    "private": true,
+                    "value": "250;20;0-;PDF form filled with PDF.co API;24+bold+italic+underline+strikeout;Arial;FF0000;www.pdf.co;true"
+                },
+                "ABB": {
+                    "allow_blank": true,
+                    "doc": "Adds one or more images on top of pdf. Each image object can be defined as x;y;pages;urltoimage;linkToOpen;width;height for example: 20;80;0-;bytescout-com.s3-us-west-2.amazonaws.com/files/demo-files/cloud-api/pdf-edit/logo.png;www.pdf.co;200;200. To separate multiple objects, use | separator.",
+                    "key": "imagesString",
+                    "private": true,
+                    "value": "100;180;0-;bytescout-com.s3-us-west-2.amazonaws.com/files/demo-files/cloud-api/pdf-edit/logo.png|400;180;0-;bytescout-com.s3-us-west-2.amazonaws.com/files/demo-files/cloud-api/pdf-edit/logo.png;www.pdf.co;200;200"
+                },
+                "ABC": {
+                    "allow_blank": true,
+                    "doc": "Set values for fillable pdf fields (i.e. fill pdf fields in pdf forms). To fill fields in PDF form, use the following format page;fieldName;value. Sample: 0;editbox1;text is here. To fill checkbox, use true, for example: 0;checkbox1;true. To separate multiple objects, use | separator. To get the list of all fillable fields in PDF form please use /pdf/info/fields endpoint.",
+                    "key": "fieldsString",
+                    "private": true,
+                    "value": "1;topmostSubform[0].Page1[0].f1_02[0];John A. Doe|1;topmostSubform[0].Page1[0].FilingStatus[0].c1_01[1];true|1;topmostSubform[0].Page1[0].YourSocial_ReadOrderControl[0].f1_04[0];123456789"
+                },
+                "ABL": {
+                    "allow_blank": true,
+                    "doc": "optional. Must be a String. You can set additional and extra options using this parameter that allows you to set custom configuration. See <a href=\"https://apidocs.pdf.co/profiles\">profiles samples</a>  for examples.",
+                    "key": "profiles",
+                    "private": true,
+                    "value": "{}"
+                },
+                "ABM": {
+                    "doc": "optional. File name for generated output. Must be a String.",
+                    "key": "name",
+                    "private": true,
+                    "value": "result"
+                },
+                "ABN": {
+                    "allow_blank": true,
+                    "doc": "optional. Password of PDF file. Must be a String",
+                    "key": "password",
+                    "private": true,
+                    "value": ""
+                }
+            },
+            "doc_link": "https://apidocs.pdf.co/index#04-pdf-add-text-and-images-to-pdf",
+            "headers": {
+                "AAE": {
+                    "key": "Content-Type",
+                    "private": true,
+                    "value": "application/json",
+                    "visibility": "hidden"
+                }
+            },
+            "initialized": true,
+            "method": "post",
+            "name": "PDF Filler",
+            "publish_as": "action",
+            "rank": 0,
+            "ret_value": "api.1615478655910x764367739913502700.plugin_api.AAC",
+            "should_reinitialize": false,
+            "types": "{\"plugin_api.AAC\":{\"caption\":\"PDF Filler\",\"fields\":{\"_p_hash\":{\"ret_value\":\"text\",\"caption\":\"hash\",\"sample_value\":\"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\"path\":[\"hash\"]},\"_p_url\":{\"ret_value\":\"text\",\"caption\":\"url\",\"sample_value\":\"https://pdf-temp-files.s3.amazonaws.com/d00adac739f24bdd9500228b3d947163/result.pdf\",\"path\":[\"url\"]},\"_p_pageCount\":{\"ret_value\":\"number\",\"caption\":\"pageCount\",\"sample_value\":3,\"path\":[\"pageCount\"]},\"_p_error\":{\"ret_value\":\"boolean\",\"caption\":\"error\",\"sample_value\":\"\",\"path\":[\"error\"]},\"_p_status\":{\"ret_value\":\"number\",\"caption\":\"status\",\"sample_value\":200,\"path\":[\"status\"]},\"_p_name\":{\"ret_value\":\"text\",\"caption\":\"name\",\"sample_value\":\"result\",\"path\":[\"name\"]},\"_p_remainingCredits\":{\"ret_value\":\"number\",\"caption\":\"remainingCredits\",\"sample_value\":89609,\"path\":[\"remainingCredits\"]},\"_p_credits\":{\"ret_value\":\"number\",\"caption\":\"credits\",\"sample_value\":9,\"path\":[\"credits\"]}}}}",
+            "url": "https://api.pdf.co/v1/pdf/edit/add",
+            "wrap_error": true
+        }
+    },
+    "human": "PDF.co",
+    "shared_headers": {
+        "AAD": {
+            "doc": "insert your PDF.co api key here. Api key you can get on https://app.pdf.co/",
+            "key": "x-api-key",
+            "private": true,
+            "visibility": "secret"
+        }
+    },
+    "shared_params": {
+        "ABO": {
+            "key": "",
+            "private": true,
+            "value": ""
+        }
+    },
+    "token_param_name": "x-api-key"
+}

@@ -1,0 +1,13 @@
+{
+    "categories": {
+        "0": "productivity",
+        "1": "technical",
+        "2": "data (things)"
+    },
+    "description": "Create new PDF, fill PDF forms, create PDF forms, use and add text, images, links, checkboxes to new PDF and existing PDF documents.",
+    "image": "//s3.amazonaws.com/appforest_uf/f1615478775452x305826591993270800/pdf-co-icon-72.png",
+    "license": "open_source",
+    "link": "https://apidocs.pdf.co/index#04-pdf-add-text-and-images-to-pdf",
+    "name": "PDF.co PDF Filler",
+    "plugin_instructions": "Go to pdf.co, register for an account, select a credit package, get your api key and plug it in. You're all set"
+}
